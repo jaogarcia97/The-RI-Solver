@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Home View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <viewController id="BYZ-38-t0r" customClass="HomeViewController" customModule="RI_Solver" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Background" translatesAutoresizingMaskIntoConstraints="NO" id="KrA-cY-LKG">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="fill" buttonType="system" adjustsImageSizeForAccessibilityContentSizeCategory="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ghz-1Q-zFZ">
+                                <rect key="frame" x="30" y="425" width="354" height="46"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="28"/>
+                                <state key="normal" title="Take Quiz">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <preferredSymbolConfiguration key="preferredSymbolConfiguration" scale="default" weight="thin"/>
+                                </state>
+                                <connections>
+                                    <action selector="takeQuiz:" destination="BYZ-38-t0r" eventType="touchUpInside" id="hHl-7J-cP0"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Rny-po-hcL">
+                                <rect key="frame" x="30" y="521" width="354" height="46"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="28"/>
+                                <state key="normal" title="Create Quiz">
+                                    <color key="titleColor" systemColor="secondarySystemBackgroundColor"/>
+                                </state>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="Rny-po-hcL" firstAttribute="top" secondItem="Ghz-1Q-zFZ" secondAttribute="bottom" constant="50" id="0RO-h9-ED8"/>
+                            <constraint firstItem="Ghz-1Q-zFZ" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Aq9-sB-apJ"/>
+                            <constraint firstItem="KrA-cY-LKG" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="-20" id="Fyg-pI-s7C"/>
+                            <constraint firstItem="KrA-cY-LKG" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="Ha2-zl-OHR"/>
+                            <constraint firstAttribute="bottom" secondItem="KrA-cY-LKG" secondAttribute="bottom" id="Sfz-qn-TyZ"/>
+                            <constraint firstItem="Ghz-1Q-zFZ" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="ULD-sa-41C"/>
+                            <constraint firstItem="Rny-po-hcL" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="30" id="XuW-AF-3sw"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Ghz-1Q-zFZ" secondAttribute="trailing" constant="30" id="cCb-H3-VDt"/>
+                            <constraint firstAttribute="trailing" secondItem="KrA-cY-LKG" secondAttribute="trailingMargin" constant="8" id="lxq-sA-8Fi"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Rny-po-hcL" secondAttribute="trailing" constant="30" id="rZF-0J-MaI"/>
+                            <constraint firstItem="Ghz-1Q-zFZ" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="30" id="svo-6a-1RP"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="createQuizBttn" destination="Rny-po-hcL" id="Ml9-cu-oAR"/>
+                        <outlet property="takeQuizBtn" destination="Ghz-1Q-zFZ" id="t3a-Kd-Qg5"/>
+                        <segue destination="VSu-ZN-iNt" kind="presentation" identifier="toQuizMenu" modalPresentationStyle="fullScreen" id="R4D-Gj-S2J"/>
+                    </connections>
+                </viewController>
+            </objects>
+            <point key="canvasLocation" x="105.79710144927537" y="83.705357142857139"/>
+        </scene>
+        <!--Quiz Menu View Controller-->
+        <scene sceneID="GaK-bq-6LV">
+            <objects>
+                <viewController id="VSu-ZN-iNt" customClass="QuizMenuViewController" customModule="RI_Solver" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="WIf-iq-LaO">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Background" translatesAutoresizingMaskIntoConstraints="NO" id="cee-Zj-XdM">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Quiz" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="A2e-oL-j2I">
+                                <rect key="frame" x="50" y="74" width="65.5" height="37"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="30"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                                <color key="shadowColor" systemColor="secondaryLabelColor"/>
+                                <size key="shadowOffset" width="1" height="1"/>
+                            </label>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="RfL-gz-ram"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="cee-Zj-XdM" firstAttribute="top" secondItem="WIf-iq-LaO" secondAttribute="top" id="CbF-35-5rV"/>
+                            <constraint firstItem="cee-Zj-XdM" firstAttribute="leading" secondItem="WIf-iq-LaO" secondAttribute="leading" id="KPH-bz-RQd"/>
+                            <constraint firstItem="A2e-oL-j2I" firstAttribute="leading" secondItem="RfL-gz-ram" secondAttribute="leading" constant="50" id="MRH-lv-Jup"/>
+                            <constraint firstItem="A2e-oL-j2I" firstAttribute="top" secondItem="RfL-gz-ram" secondAttribute="top" constant="30" id="a0r-qm-idM"/>
+                            <constraint firstAttribute="bottom" secondItem="cee-Zj-XdM" secondAttribute="bottom" id="cRa-5t-Nya"/>
+                            <constraint firstItem="RfL-gz-ram" firstAttribute="trailing" secondItem="cee-Zj-XdM" secondAttribute="trailing" id="yfL-Y9-QcB"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="80u-7z-Ljf"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Mub-RL-2mH" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1119" y="84"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="Background" width="390" height="844"/>
+        <systemColor name="secondaryLabelColor">
+            <color red="0.23529411764705882" green="0.23529411764705882" blue="0.2627450980392157" alpha="0.59999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="secondarySystemBackgroundColor">
+            <color red="0.94901960784313721" green="0.94901960784313721" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>
